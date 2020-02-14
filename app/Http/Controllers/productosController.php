@@ -15,7 +15,7 @@ class productosController extends Controller
         $productos=Productos::select('nombre','precio')->where('cantidad','>',0)->get();
 
 
-       return view('lista_producto',["productos"=>$productos]);  
+       return view('lista_productos',["productos"=>$productos]);  
     }
 
     
