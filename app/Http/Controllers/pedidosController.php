@@ -71,12 +71,23 @@ class pedidosController extends Controller
 
 
     public function lista_pedidos(){
+    }
+
+    public function busqueda(){
+
+        $array=Pedidos::join('productos', 'pedidos.producto_id', '=', 'productos.id')
+        ->where('user_id',Auth::id())
+        ->select('producto_id','user_id')
+        ->groupBy('producto_id','user_id')
+        ->get();
         
+        return view('busqueda',["productos"=>$array]);
     }
 
     public function lista_pedidos_producto(){
-
-        return view('lista_pedidos_producto');
+        $id=1;
+        $pedidos=Pedidos::where('producto_id',$id)->get();
+        return view('lista_pedidos_producto',["pedidos"=>$pedidos]);
     }
 
 
