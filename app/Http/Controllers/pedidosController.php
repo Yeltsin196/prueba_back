@@ -70,7 +70,9 @@ class pedidosController extends Controller
     }
 
 
-    public function lista_pedidos(){
+    public function lista_pedidos(Request $request){
+        $pedidos=Pedidos::where('user_id',Auth::id())->get();
+        return view('lista_pedidos',["pedidos"=>$pedidos]);
     }
 
     public function busqueda(){
