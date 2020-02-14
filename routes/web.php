@@ -1,5 +1,6 @@
 <?php
-
+use App\Pedidos;
+use App\Productos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,22 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/getapi','pedidosController@fetchMunicipios');
+
+Route::group(['middleware' => ['auth']], function () {
+    //
+    Route::get('/crearPedido',function(){
+        $productos= Productos::all();
+         return view('crearPedido',['productos'=>$productos]);
+     });
+
+
+
+     Route::post('/crearPedido', 'pedidosController@crear');
+});
+
+
+
+
+

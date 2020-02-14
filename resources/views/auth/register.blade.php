@@ -18,10 +18,65 @@
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
                                 @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Municipio</label>
+                            <div class="col-md-6">
+                               
+                                <select name="municipio">
+                                     @foreach ($Municipios as $municipio)
+                                    <option value="{{$municipio["c_digo_dane_del_municipio"]}}">{{$municipio["c_digo_dane_del_municipio"]}}</option>
+                                      @endforeach
+                                </select>
+                       
+                             
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Telefono</label>
+                            <div class="col-md-6">
+                               
+                                <input type="text" name="tlf">
+                       
+                             
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Direccion</label>
+                            <div class="col-md-6">
+                               
+                                <input type="text" name="direccion">
+                       
+                             
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">DNI</label>
+                            <div class="col-md-6">
+                               
+                                <input type="text" name="dni">
+                       
+                             
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">codigo postal</label>
+                            <div class="col-md-6">
+                               
+                                <input type="text" name="codigopostal">
+                       
+                             
                             </div>
                         </div>
 
@@ -32,9 +87,9 @@
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -46,9 +101,9 @@
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
