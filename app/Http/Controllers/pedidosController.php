@@ -19,16 +19,34 @@ class pedidosController extends Controller
         $response = $request->getBody()->getContents();
        
        $response2= json_decode($response, true);
-      /*  $arraya= array();
+        $arraya= array();
         foreach ($response2 as $municipio){
                $departamento=  $municipio["departamento"];
-               $this->verificar($departamento);
-       }  */
+               $municipio["municipio"];
+             $resultado= $this->verificar($departamento,$arraya);
+               ($resultado)? "": array_push($arraya,$departamento);
+               
+       }  
 
-
+       return $arraya;
        return $response2;
     }
-    public function verificar(){
+
+    public function municipios($arraya){
+        foreach($arraya as $valor){
+
+        }
+    }
+    public function verificar($departamento,$arraya){
+        $res=false;
+        foreach($arraya as $b){
+           
+          if($b==$departamento){
+            $res= true;
+          break;
+          }
+        }
+        return $res;
 
     }
 
@@ -86,9 +104,9 @@ class pedidosController extends Controller
         return view('busqueda',["productos"=>$array]);
     }
 
-    public function lista_pedidos_producto(){
-        $id=1;
-        $pedidos=Pedidos::where('producto_id',$id)->get();
+    public function lista_pedidos_producto(Request $request){
+        
+        $pedidos=Pedidos::where('producto_id',$request["producto_id"])->get();
         return view('lista_pedidos_producto',["pedidos"=>$pedidos]);
     }
 

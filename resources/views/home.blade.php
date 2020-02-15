@@ -17,6 +17,13 @@
 
                     You are logged in!
                    
+                    <div class="container">
+                        <div class="row">
+                            <a href="/lista_productos" class="btn btn-warning ml-2">Lista de productos disponibles</a>
+                            <a href="/lista_pedidos" class="btn btn-primary">Lista de pedidos</a>
+                            <a href="/busqueda" class="btn btn-info">Lista de pedidos por producto</a>
+                        </div>
+                    </div>
                         
                 </div>
             </div>

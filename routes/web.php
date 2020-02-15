@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
      });
 
      Route::get('lista_productos','productosController@lista_productos');
-     Route::get('lista_pedidos_producto/{nombre_producto?}','pedidosController@lista_pedidos_producto');
+     Route::get('lista_pedidos_producto/{producto_id?}','pedidosController@lista_pedidos_producto');
      Route::get('lista_pedidos','pedidosController@lista_pedidos');
 
 

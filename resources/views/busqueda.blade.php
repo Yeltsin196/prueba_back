@@ -6,10 +6,10 @@
   
   <div class="form-group col-lg-4">
     <label for="exampleFormControlSelect1">Seleccion un Producto</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="exampleFormControlSelect1" name="producto_id">
         @foreach($productos as $producto)
       
-      <option>{{$producto->producto_id}}</option>
+      <option value="{{$producto->producto_id}}">{{$producto->producto_id}}</option>
         @endforeach
     </select>
   </div>

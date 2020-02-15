@@ -27,13 +27,26 @@
 
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Departamento</label>
+                            <div class="col-md-6">
+                               
+                                <select  id="departamentos">
+                                     @foreach ($Departamentos as $Departamento)
+                                   
+                                     <option value=" {{$Departamento}}">  {{$Departamento}}</option> 
+                                      @endforeach
+                                </select>
+                       
+                             
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-md-4 control-label">Municipio</label>
                             <div class="col-md-6">
                                
-                                <select name="municipio">
-                                     @foreach ($Municipios as $municipio)
-                                    <option value="{{$municipio["c_digo_dane_del_municipio"]}}">{{$municipio["c_digo_dane_del_municipio"]}}</option>
-                                      @endforeach
+                                <select name="municipio"  id="municipios">
+                                     
                                 </select>
                        
                              
