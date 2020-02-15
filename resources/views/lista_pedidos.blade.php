@@ -2,7 +2,10 @@
 
 @section('content')
 
-<table class="table">
+<div class="container">
+  <div class="row">
+      <div class="col-6 col-lg-6 m-auto">
+      <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -11,10 +14,13 @@
     </tr>
   </thead>
   <tbody>
+  <?php $i=1;?>
       @foreach($pedidos as $pedido)
     <tr>
-        
-      <th scope="row">1</th>
+    
+  
+      <th scope="row">  {{$i}}</th>
+      <?php $i++; ?>
       <td>{{$pedido->cantidad}}</td>
       <td>{{$pedido->valor}}</td>
      
@@ -22,5 +28,9 @@
     @endforeach
   </tbody>
 </table>
+      </div>
+  </div>
+</div>
+
 
 @endsection

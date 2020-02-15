@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Nombre</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -30,7 +30,7 @@
                             <label class="col-md-4 control-label">Departamento</label>
                             <div class="col-md-6">
                                
-                                <select  id="departamentos">
+                                <select class="form-control"  id="departamentos">
                                      @foreach ($Departamentos as $Departamento)
                                    
                                      <option value=" {{$Departamento}}">  {{$Departamento}}</option> 
@@ -45,7 +45,7 @@
                             <label class="col-md-4 control-label">Municipio</label>
                             <div class="col-md-6">
                                
-                                <select name="municipio"  id="municipios">
+                                <select name="municipio" class="form-control"  id="municipios">
                                      
                                 </select>
                        
@@ -57,7 +57,7 @@
                             <label class="col-md-4 control-label">Telefono</label>
                             <div class="col-md-6">
                                
-                                <input type="text" name="tlf">
+                                <input type="text"  class="form-control" name="tlf">
                        
                              
                             </div>
@@ -67,7 +67,7 @@
                             <label class="col-md-4 control-label">Direccion</label>
                             <div class="col-md-6">
                                
-                                <input type="text" name="direccion">
+                                <input type="text"  class="form-control" name="direccion">
                        
                              
                             </div>
@@ -77,24 +77,24 @@
                             <label class="col-md-4 control-label">DNI</label>
                             <div class="col-md-6">
                                
-                                <input type="text" name="dni">
+                                <input type="text"  class="form-control" name="dni">
                        
                              
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 control-label">codigo postal</label>
+                            <label class="col-md-4 control-label">Codigo postal</label>
                             <div class="col-md-6">
                                
-                                <input type="text" name="codigopostal">
+                                <input type="text"  class="form-control" name="codigopostal">
                        
                              
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>

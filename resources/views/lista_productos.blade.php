@@ -11,13 +11,16 @@
     </tr>
   </thead>
   <tbody>
-      @foreach($productos as $producto)
+  <?php $i = 1; ?>
+    @foreach($productos as $producto)
     <tr>
-        
-      <th scope="row">1</th>
+      
+
+      <th scope="row"> {{$i}}</th>
+      <?php $i++; ?>
       <td>{{$producto->nombre}}</td>
       <td>{{$producto->precio}}</td>
-     
+
     </tr>
     @endforeach
   </tbody>

@@ -2,8 +2,10 @@
 
 @section('content')
 
+<div class="container">
+  <div class="row">
 
-<table class="table table-striped">
+  <table class=" table table-striped">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -13,10 +15,12 @@
     </tr>
   </thead>
   <tbody>
+   <?php $i=1;?>
       @foreach($pedidos as $pedido)
     <tr>
      
-      <th scope="row">1</th>
+      <th scope="row">{{$i}}</th>
+      <?php $i++;?>
       <td>   {{$pedido->cantidad}}</td>
       <td>   {{$pedido->valor}}</td>
       <td>   {{$pedido->created_at}}</td>
@@ -27,6 +31,8 @@
   </tbody>
 </table>
 
-<a href="/home" class="btn btn-success">Home</a>
+  </div>
+</div>
+
 
 @endsection
